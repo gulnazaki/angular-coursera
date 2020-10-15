@@ -9,6 +9,8 @@ LunchCheckController.$inject = ['$scope'];
 
 function LunchCheckController($scope) {
 	$scope.lunch = "";
+	$scope.message = "";
+    $scope.color = "";
 
 	$scope.checkQuantity = function () {
 		if ($scope.lunch === "") {
