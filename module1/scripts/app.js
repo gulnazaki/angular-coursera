@@ -13,8 +13,10 @@ function LunchCheckController($scope) {
 	$scope.checkQuantity = function () {
 		if ($scope.lunch === "") {
 			$scope.message = "Please enter data first";
+			$scope.color = "red";
 		} else {
-			var items = $scope.lunch.split(',').length;
+			var items = $scope.lunch.split(',').filter(lunch => lunch.trim() !== "").length;
+			$scope.color = "green";
 			if (items <= 3) {
 				$scope.message = "Enjoy!";
 			} else {
